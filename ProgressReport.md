@@ -1,4 +1,4 @@
-#Artificial Intelligence Disc Jockey - Smart audio transitioning
+﻿#Artificial Intelligence Disc Jockey - Smart audio transitioning
 ##Matt Crewe U1607275
 ##University of Warwick, Department of Computer Science
 
@@ -11,10 +11,13 @@ Aim of the project. Description of the aim. How's its achieved. How far along th
 
 ###Introduction and background
 
-The goal is to blend multiple audio tracks togethor to give a smoother playback experience to the listener when changing between songs. Current examples use a technique known as cross fade in which the volume of one track is lowered over time while the volume of the other is raised. 
+The goal of this project is have an audio player which blends multiple audio tracks together to give a smoother playback experience to the listener when changing between songs, automating the role of a DJ which you would find in a bar or night-club. Current examples of audio players such as Apple music*link to apple* and Spotify*link to spotify* try to achieve this state of automation using a technique known as cross-fade in which both tracks are played simultaneously while the volume of one track is lowered over time while the volume of the other is raised. These current examples use no analysis of the audio they’re playing in order to perform this operation and
+
+Results can vary with some transitions being of very poor quality.
+
+This can lead to some incoherent noise during song changes if any of the: key, tempo, or genre are mismatched.
 
 
-		Current examples of cross-fade use no intelligent algorithms, instead using a simple fixed duration fade-out on the first song overlaid by the second song with a fade-in of the same duration. This can lead to some incoherent noise during song changes if any of the: key, tempo, or genre are mismatched.
 
 		Almost all western music lies upon the chromatic scale, a scale which uses 12 notes all of the same distance from each other. It is however very rare for any one song to use every one of these notes; a select number of notes would be used to comprise each song. Each of these combinations of notes are assigned a new scale in which the song is said to be in with common scales being pentatonic or heptatonic.
 
@@ -31,12 +34,14 @@ The goal is to blend multiple audio tracks togethor to give a smoother playback 
 
 ###System Requirements/Technology used
 
-Not very powerful processor needed, im running a pentium II and works fine so far
-Gstreamer multimedia... so far
+Not very powerful processor needed, I’m running a pentium II and works fine so far
+Gstreamer multimedia pipeline with pluggins from the good library and bad library (But none from the ugly library)
 
 
 ###Objectives
-
+A reminder of the objectives outlined to reach the ultimate goal of the project.
+In the specification the order of the objectives indicated the order in which the would be completed but this is no longer the case. Objective 9 has been added which is to implement the audio transitions – this was always known to have been implemented but is now an explicit objective. The sub objectives under 
+objective 9 are not exhaustive of all possible transitions, but instead the absolute minimum variety of transitions types.  
 ####Functional 
 	1. Decode WAV files into signal that can be analysed (Done)
 	2. Volume Normalisation (Not done)
@@ -45,7 +50,11 @@ Gstreamer multimedia... so far
 	5. Key detection (Not done)
 	6. Time stretching, pitch shifting - and changing over time (Done - not changing over time)
 	7. Tempo and beat matching (Not done)
-	8. Choose method of transitioning between audio sources (Not done)
+	8. Choose method of transitioning between audio sources using AI (Not done)
+	9. Implement audio transitioning methods
+		a. Cross-fade
+		b. Loop and fade
+		c. Instant switch
 
 ####Extensions
 	1. Instrument/ layer separation (Not done)
@@ -55,17 +64,23 @@ Gstreamer multimedia... so far
 
 
 
-Project overview
+###Project overview
 
 Programmed in c. gcc used for compiling
-git used for version control and github used for repository store
+git used for version control and GitHub used for repository store
 
 gstreamer framework used for audio data file sourcing, decoding, manipulation, analysing and playback.
 
 
 
 
-Research
+###Research
+
+	Algorithms used for beat detection
+	Algorithms used for key detection
+	
+
+
 
 
 
@@ -73,7 +88,16 @@ Risk
 
 
 
-Project State
+###Project State
+
+####Objectives Complete
+Objective 1 and Extension objective 2 have been completed, the program can use any audio file format as a source and process into raw audio data for further analysis and modification. 
+Objective 4 completed
+Objective 6 completed although result given is not always accurate, results vary between different genres of music, and can be confused during periods of tempo changes or quieter parts of the songs where lower frequency notes are less frequent.
+
+####Objectives behind schedule
+Objectives 2 and 3 are set to be completed according to the timetable given in the original specification. This is due to the fact that the order of objectives that I’ve worked on has different from that originally given as I’ve decided that other qualities of the song are more important than the volume when it comes to progressing on the project. I’ve decided to work instead on tempo analysis and modification and pitch modification and to allow me to progress onto the AI part of the development sooner. Feel this is the harder part of the task
+
 
 
 
@@ -81,11 +105,12 @@ Testing
 
 
 
-Project Management
+###Project Management
 
 
 
-Legal, Ethical, and Professional issues
+
+Legal, Ethical, and Professional issues??
 
 
 
